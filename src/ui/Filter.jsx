@@ -41,6 +41,7 @@ function Filter({ filterField, options }) {
 
   function handleClick(value) {
     searchParams.set(filterField, value);
+
     setSearchParams(searchParams);
   }
 
@@ -50,7 +51,7 @@ function Filter({ filterField, options }) {
         <FilterButton
           onClick={() => handleClick(option.value)}
           key={option.value}
-          active={option.value === currentFileter}
+          $active={option.value === currentFileter}
           disabled={option.value === currentFileter}
         >
           {option.label}
