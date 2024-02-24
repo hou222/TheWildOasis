@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import Row from "../../ui/Row";
+import Empty from "../../ui/Empty";
 import Modal from "../../ui/Modal";
 import Heading from "../../ui/Heading";
 import Tag from "../../ui/Tag";
@@ -33,6 +34,8 @@ function BookingDetail() {
   const moveBack = useMoveBack();
 
   if (isLoading) return <Spinner />;
+
+  if (!booking) return <Empty resourceName="booking" />;
 
   const { status, id: bookingId } = booking;
   const statusToTagName = {
